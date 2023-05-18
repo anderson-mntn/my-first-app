@@ -3,7 +3,7 @@ import Header from './Header';
 
 function App() {
   return (
-    <Header></Header>
+    <Header name="Título do Header" links={["Buy", "Contact", "About"]}></Header>
   );
 }
 

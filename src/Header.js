@@ -1,14 +1,14 @@
 import React from "react";
 import './App.css'
 
-function Header(){
+function Header(props){
     return (
         <header className='header1'>
-            <h1>My Header</h1>
+            <h1>{props.name}</h1>
             <ul className="list1">
-                <li>About</li>
-                <li>Buy</li>
-                <li>Contact</li>
+                <li>{props.links[0]}</li>
+                <li>{props.links[1]}</li>
+                <li>{props.links[2]}</li>
             </ul>
         </header>
     )
