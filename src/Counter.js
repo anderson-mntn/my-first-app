@@ -3,9 +3,9 @@ import React from "react";
 class Counter extends React.Component{
 
     constructor(props){
-        super();
+        super(props);
 
-        this.state = {count: 1};
+        this.state = {count: this.props.count};
         this.add = this.add.bind(this)
     }
 

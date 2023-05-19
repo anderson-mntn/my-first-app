@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Header name="Título do Header" links={["Buy", "Contact", "About", "Login"]}></Header>
-      <Counter/>
+      <Counter count={7}/>
     </div>
   );
 }
