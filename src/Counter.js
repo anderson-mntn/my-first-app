@@ -26,11 +26,17 @@ class Counter extends React.Component{
         return false; 
     }
 
-    */ 
-
+    - Resgatando state do localStorage. Caso utilize fetch usaremos aqui
     componentDidMount(){
         this.setState(JSON.parse(localStorage.getItem('state')))
     }
+
+    Usado quando componente sai da tela
+    componentWillUnmount(){
+
+    }
+
+    */ 
 
 
     render(){
