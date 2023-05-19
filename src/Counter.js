@@ -13,8 +13,20 @@ class Counter extends React.Component{
 
     add(){
         // Ajustando para uma função - Cria uma "fila" para que seja atualizado da maneira correta
-        this.setState((state) =>{ return {count: state.count + 1}})
-    }   
+        this.setState((state) =>{ return {count: state.count + 1}}, ()=>{
+            console.log(this.state)
+        })
+    }  
+
+    /*  --- Métodos do ciclo de vida de um componente ---
+
+    - Trava a renderização na tela, mas o estado ainda muda
+    shouldComponentUpdate(){
+        return false; 
+    }
+
+    */ 
+
 
     render(){
         return(
