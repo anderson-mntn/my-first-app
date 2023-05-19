@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useSyncExternalStore } from "react";
 
 
+function Counter(props){
 
+    const [contador, setContador] = useState(props.count) // or useState(0)
+    const [meuEstado, setMeuEstado] = useState("alguma coisa")
+
+
+    function add(){
+        setContador(contador + 1);
+        console.log("add")
+
+        console.log(meuEstado)
+    }
+
+    return(
+        <div>
+            <h1>Counter: {contador}</h1>
+            <button onClick={add}>Add</button>
+        </div>
+    )
+}
 
 
 
