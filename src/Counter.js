@@ -5,7 +5,7 @@ class Counter extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {count: this.props.count} 
+        this.state = {count: 0} 
         // Dentro de "constructor" é o único lugar que podemos atribuir state à alguma coisa.
         // Em outros lugares deve-se usar .setState
         this.add = this.add.bind(this)
@@ -15,6 +15,7 @@ class Counter extends React.Component{
         // Ajustando para uma função - Cria uma "fila" para que seja atualizado da maneira correta
         this.setState((state) =>{ return {count: state.count + 1}}, ()=>{
             console.log(this.state)
+            localStorage.setItem('state', JSON.stringify(this.state))
         })
     }  
 
@@ -26,6 +27,10 @@ class Counter extends React.Component{
     }
 
     */ 
+
+    componentDidMount(){
+        this.setState(JSON.parse(localStorage.getItem('state')))
+    }
 
 
     render(){
