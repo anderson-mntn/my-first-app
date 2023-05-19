@@ -5,13 +5,16 @@ class Counter extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {count: this.props.count};
+        this.state = {count: this.props.count} 
+        // Dentro de "constructor" é o único lugar que podemos atribuir state à alguma coisa.
+        // Em outros lugares deve-se usar .setState
         this.add = this.add.bind(this)
     }
 
     add(){
-        this.setState({count: this.state.count + 1}) // Nunca usar .state para mudar o estado, pq muda diretamente
-    }
+        // Ajustando para uma função - Cria uma "fila" para que seja atualizado da maneira correta
+        this.setState((state) =>{ return {count: state.count + 1}})
+    }   
 
     render(){
         return(
