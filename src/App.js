@@ -8,26 +8,29 @@ function App() {
   const [show, setShow] = useState(true)
 
   
+  // componentWillUnmount()
   useEffect(()=>{
+    
     let time = 0;
-  
     let timer = setInterval(() => {
       time++;
-      console.log(time)
-      if(time >= 5){
-        clearInterval(timer)
-        setShow(false)
+      if(time >= 6){
+        clearInterval(timer);
+        setShow(false);
+        console.log("Contador removido!")
+      } else {
+        console.log(time)
       }
-    }, 1000);
+    }, 1000)
 
-  }, [])
+  },[])
 
 
   if(show){
     return (
       <div>
         <Header name="Título do Header" links={["Buy", "Contact", "About", "Login"]}></Header>
-        <Counter count={0}/>
+        <Counter count={3}/>
       </div>
     )
   } else {

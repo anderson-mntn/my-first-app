@@ -18,13 +18,10 @@ function Counter(props){
 
 
     useEffect(()=>{
-        setCount(parseInt(localStorage.getItem('count')))
-
-        // componentDidUnmount() - quando o elemento sair da tela / for destruído
-        return ()=>{
-            console.log("Contador removido")
-        }
+        setCount(parseInt(localStorage.getItem('count')));
     }, [])
+
+    
 
     useEffect(()=>{
         document.title = count;
